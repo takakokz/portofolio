@@ -6,7 +6,7 @@
 - <b>Azure / Cloud Cybersecurity Project/</b>
   - [Created Honeynet on Azure](https://github.com/takakokz/azure-honeynet-pj)
 - <b>AWS Project</b>
-  - [Image Analysis Middleware](https://github.com/joshmadakor1/4chan-Image-Analysis-Middleware-C964) <b><i>(Potentially NSFW)</b></i>
+  - [Built AWS App to calculate longtitude/latitude](https://github.com/takakokz/endtoend_appaws) 
 
 - <b>Python</b>
   - [Package Delivery Application (Datastructures and Algorithms Demo)](https://github.com/joshmadakor1/Package-Delivery-Pathfinding-Algorithm)
