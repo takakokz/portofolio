@@ -24,14 +24,59 @@ A total of 13 Windows logs were given to investigate what has happened, and we o
 | 17:34:56 |  Failed Local Logon Attempt on SERVER-12345 | Event ID 529: A failed local login attempt using Admin on SERVER-12345 |
 
 <h2>Identification and Investigation</h2>
-A malicious actor obtained the credential of a business user(Account A) to initiate remote access. It is likely that the attacker enabled an audit policy to identify previleged accounts and search for databases containing sensitive information. Following successful brute force attack, the attacker compromised the administrator's account.
 
-The firewall generated two alerts indicating attempts to access the router via vulnerable SMB and SSH protocol. Additionally, application log shows suspicious activity, wtith potential malicious program running in the background of explorer.exe. The MSSQL server indicates I/O error, suggesting potential data curruption, while unknown applications communicating over port 80 raised concern about potential data exfilteration. Throughout logs, it indicated that the malicious actor traversed multiple internal network segments, suggesting successful lateral movement within the network. 
+
+- A malicious actor obtained the credential of a business user(Account A) to initiate remote access. 
+- It is likely that the attacker enabled an audit policy to identify previleged accounts and search for databases containing sensitive information. 
+- Following successful brute force attack, the attacker compromised the administrator's account.
+
+- The firewall generated two alerts indicating attempts to access the router via vulnerable SMB and SSH protocol. - Additionally, application log shows suspicious activity, wtith potential malicious program running in the background of explorer.exe.
+- The MSSQL server indicates I/O error, suggesting potential data curruption, while unknown applications communicating over port 80 raised concern about potential data exfilteration.
+- Throughout logs, it indicated that the malicious actor traversed multiple internal network segments, suggesting successful lateral movement within the network. 
 
 <h2>Containment Plans</h2>
 A security incident has been detected in the healcare facility's IT infrastructure, potentially compromising patient data and system integrity. This plan outlines our immediate and long-term responses, focusing on minimizing business impact and financial risk.
 
 <h3>Short Term Plan</h3>
+
 | Control Identifier | Control Name | Control/Action to Take |
 | --- | --- | --- |
-| 08:10:23 | Successful Remote Login by business user account A into DESKTOP-1234567 | Event ID 4624: Successful login via RDP (Remote Login, from IP 192.168.1.2) |
+| AC-2(3) | Disable Accounts | Disable business account A which was used in violation of organizational policy |
+| IA-5 | Authenticator Management | Action: Force password reset for all admin accounts and users on affected systems |
+| SC-7 | Boundary Protection | Disallow traffic on ports 445 and 22. Firewall reconfiguration helps to prevent future remote access attempts from malicious actors. |
+| IR-4(3) | Incident Handling | Incident response actions - Shutdown affected system |
+| IR-4(12) | Malicious Code and Forensic Analysis | Analyze malicious code and/or other residual artifacts remaining in the system after the incident. Identify & remove persistent backdoors to prevent future unauthorized access. |
+| IR-4(15) | Public Relations and Reputation Repair | If more than 500 patients' PHI is compromised, manage public relations associated with the public |
+| IR-7 | Information Spillage Response | Identifying the specific data involved in the system contamination. Isolating the contaminated system or system component. Eradicating the data from the contaminated system or component; |
+| IR-7 | Incident Response Assistance | Utilize organization response support resources, including help desks, assistance groups, automated ticketing systems to open and track incident response tickets, and access to forensics or consumer redress services when required. |
+
+<h2>Post Incident Review</h2>
+
+<h3>Timeline to report executives what has happened</h3>
+
+![image](https://github.com/user-attachments/assets/2805d720-c97b-4057-8588-80413435b7fe)
+
+
+- By getting support from external cybersecurity experts from NoMoreAttack Inc. from Sep 22, forensic analysis was conducted to determine the extent of the breach, identify compromised data, and trace the attacker’s action within the network. 
+- Communication with affected patients, regulators, and the public media was conducted to show transparency with timely updates on the incident, action taken, the hacker group involved
+- Established the call center to respond to inquiries where individuals can learn if their information was involved in the breach and inform them of potential effects.  The toll-free phone number is listed on the website until Dec 20, 2023. 
+
+<h3>Analyze Business Impact</h3>
+
+![image](https://github.com/user-attachments/assets/f41e3e32-5c6d-4cfb-82ae-c92413e7d894)
+Although cyber liability insurance covers most expenses, reputation damage hurt the facility's image. 
+
+<h3>Lessons Learned and Preventitive Measure</h3>
+
+
+- PEOPLE - Incident Response & Security Awareness Training
+- PROCESS - Privilege Management
+- TECHNOLOGY - System Monitoring
+![image](https://github.com/user-attachments/assets/cb8e1193-dec4-487a-bd92-2f953b2f2553)
+
+
+# Conclusion 
+Throughout this project, I learned from other members that there are multiple ways to analyze an incident. The data provided was not enough to see full picture of the incident, which in a way, was beneficial as it required us to work with limited information. I felt it was similar to real-workd situations that comapnies often face. Our group presented to the instructer every session, and instructor's feedback helped us identify areas where we needed improvement. Initially, we approached the project with a technical mindset, but we soon realized that the final presentation needed to be tailored to executives, so we minimize technical words as much as possible. In the end, the instructor gave us positive feedback, and I am very happy with the overall experience. 
+
+
+
