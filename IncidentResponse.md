@@ -1,7 +1,7 @@
 # Incident Response and Review Mini Sprint 
 
 <b>Clicked provided this group project opportunity to work with others who are studying cybersecurity from Sep 23, 2024 to Oct 4, 2024. </b>
-In this case study, the group worked the role of cybersecurity professionals tasked with identifying and mitigating threats using NIST Incident Response Profess Framework. After creating technical report, we developed an report and presentation to executives and related stakeholders. The content was designed to provide high-level insight fousing on the timeline, business impact, key takeaways, and future budget proposal to create proactive secure posture. 
+In this case study, the group worked the role of cybersecurity professionals tasked with identifying and mitigating threats using NIST Framework. After creating technical report, we developed an report and presentation to executives and related stakeholders. The content was designed to provide high-level insight fousing on the timeline, business impact, key takeaways, and future budget proposal to create proactive secure posture. 
 
 # Overview
 Unusual activity was detected on file transfer platform of the Healthcare facility.  
